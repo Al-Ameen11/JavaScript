@@ -1,0 +1,35 @@
+.todo-list-grid,
+.display-result-grid{
+    display:grid;
+    grid-template-columns: 200px 150px 100px;
+    gap: 10px;
+    align-items: stretch;
+}
+.display-result-grid{
+    align-items:center;
+}
+.display-result-grid{
+    margin-top: 10px;
+}
+.add-todo-button{
+    color: white;
+    background-color: green;
+    padding: 8px;
+    border: none;
+}
+.delete-todo-button{
+    color: white;
+    background-color: red;
+    padding: 8px;
+    border: none;
+}
+.todo-list-name,
+.todo-list-date{
+    font-size: 1.1rem;
+}
+.todo-name-input,
+.todo-date-input
+{
+    padding: 8px;
+    font-size: 1em;
+}

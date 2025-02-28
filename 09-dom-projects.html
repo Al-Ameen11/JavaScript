@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>YouTube Subscribe Button</p>
+    <button class="js-subscribe-button" onclick="subscribeButton()">
+        Subscribe</button>
+       <p>Rock Paper Scissors </p>
+       <a href="./10-dom-rock-paper-scissors.html">Click here</a>
+       <p>Amazon Shipping Calculator</p>
+       <input type="number" class="js-inputElement" onkeydown="enterCalculate(event)">
+       <button onclick="moneyCalculate()">Calculate</button>
+       <p class="js-amount"></p>
+    <script>
+        function subscribeButton(){
+            const subscribeButton = document.querySelector('.js-subscribe-button');
+            if (subscribeButton.innerHTML === 'Subscribed') {
+                document.querySelector('.js-subscribe-button').innerHTML = 'Subscribe';
+            } else {
+                document.querySelector('.js-subscribe-button').innerHTML = 'Subscribed';
+            }
+        }
+
+        function moneyCalculate(){
+            let inputElement = document.querySelector('.js-inputElement');
+            let amount = Number(inputElement.value);
+            if (amount <50) {
+                amount +=10;
+            } else {
+                amount;
+            }
+            document.querySelector('.js-amount').innerHTML = amount; 
+        }
+        function enterCalculate(event) {
+            const key =event.key;
+            if (key === "Enter") {
+                moneyCalculate();
+            }else if(key ==="Escape"){
+                document.querySelector('.js-inputElement').value = '';
+            }
+        }
+    </script>
+</body>
+</html>

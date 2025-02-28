@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .subscribe-button{
+        color: white;
+        background-color: rgb(8, 8, 8);
+        padding: 8px 12px;
+        font-weight: bold;
+        border-radius: 50px;
+    }
+    .is-subscribed{
+        color: black;
+        border:none;
+        background-color: rgb(200, 198, 198);
+    }
+    .inputBox{
+        padding: 10px;
+    }
+    .calculateButton{
+        background-color: green;
+        border: none;
+        color: white;
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+</style>
+<body>
+    <p>YouTube Subscribe Button</p>
+    <button class="js-subscribe-button subscribe-button" onclick="subscribeButton()">
+        Subscribe</button>
+       <p>Rock Paper Scissors </p>
+       <a href="./10-dom-rock-paper-scissors.html">Click here</a>
+       <p>Amazon Shipping Calculator</p>
+       <p>Orders under $40 = +$10 shipping</p>
+       <p>Orders over $40 = FREE shipping.</p>
+       <input type="number" class="js-inputElement inputBox" onkeydown="enterCalculate(event)" placeholder="Cost of Order">
+       <button onclick="moneyCalculate()" class="calculateButton">Calculate</button>
+       <p class="js-amount"></p>
+    <script>
+        function subscribeButton(){
+            const subscribeButton = document.querySelector('.js-subscribe-button');
+            if (subscribeButton.innerHTML === 'Subscribed') {
+                document.querySelector('.js-subscribe-button').innerHTML = 'Subscribe';
+                subscribeButton.classList.remove('is-subscribed');
+                
+            } else {
+                document.querySelector('.js-subscribe-button').innerHTML = 'Subscribed';
+                subscribeButton.classList.add('is-subscribed');
+            }
+        }
+
+        function moneyCalculate(){
+            let inputElement = document.querySelector('.js-inputElement');
+            let amount = Number(inputElement.value);
+            if (amount <50) {
+                amount +=10;
+            } else {
+                amount;
+            }
+            document.querySelector('.js-amount').innerHTML = amount; 
+        }
+        function enterCalculate(event) {
+            const key =event.key;
+            if (key === "Enter") {
+                moneyCalculate();
+            }else if(key ==="Escape"){
+                document.querySelector('.js-inputElement').value = '';
+            }
+        }
+    </script>
+</body>
+</html>
