@@ -8,12 +8,12 @@ cart.forEach(cartItem =>{
 let matchingProduct;
 
 products.forEach(product =>{
-    if(cartItem.productId === product.id){
-        matchingProduct = product;
-    }
-});
+        if(cartItem.productId === product.id){
+            matchingProduct = product;
+        }
+    });
 
-cartSummaryHtml += `
+    cartSummaryHtml += `
     <div class="cart-item-container">
         <div class="delivery-date">
             Delivery date: Wednesday, June 15
@@ -88,5 +88,5 @@ cartSummaryHtml += `
         </div>
     </div>
 `;
-})
+});
 document.querySelector('.js-cart-summary').innerHTML = cartSummaryHtml;
